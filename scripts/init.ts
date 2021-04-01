@@ -1,7 +1,7 @@
 /**
- * Disable debug
+ * Init
  * =====================
- * Check if configs/config.js has debug to off
+ * Configure telegram token and username
  *
  * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
  *

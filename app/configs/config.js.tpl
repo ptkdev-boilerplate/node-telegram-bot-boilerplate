@@ -5,7 +5,7 @@ module.exports = {
 	},
 
 	"telegram": { // from @botfather on telegram
-		name: "BOT_USERNAME",
+		username: "BOT_USERNAME",
 		token: "BOT_TOKEN",
 	},
 
