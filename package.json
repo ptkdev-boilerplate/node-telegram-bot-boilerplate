@@ -1,0 +1,92 @@
+{
+	"name": "@ptkdev/node-telegram-bot-boilerplate",
+	"displayName": "Node Module (Library) Boilerplate",
+	"description": "Create your telegram bot with this friendly boilerplate. Use this respository as template for your bot",
+	"version": "1.0.20210331",
+	"main": "dist/core/bot.js",
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": "Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)",
+	"license": "MIT",
+	"license-docs": "CC BY 4.0",
+	"license-translations": "CC BY 4.0",
+	"license-images": "CC BY-NC 4.0",
+	"homepage": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"scripts": {
+		"init": "ts-node scripts/configs.ts && ts-node scripts/init.ts",
+		"start": "node dist/core/bot.js",
+		"start-pm2": "pm2 start .pm2-process.json",
+		"stop-pm2": "pm2 stop .pm2-process.json",
+		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && rm -rf dist && nodemon --exec 'npm run build && npm run start'",
+		"build": "ttsc",
+		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build",
+		"test": "jest app",
+		"docs": "git submodule update --recursive && markserv ./README.md",
+		"lint": "eslint . --cache --ext .ts,.js",
+		"lint-fix": "eslint . --cache --ext .ts,.js --fix",
+		"git-set-upstream": "git remote add upstream git@github.com:ptkdev-boilerplate/node-telegram-bot-boilerplate.git && git fetch upstream",
+		"git-pull-upstream": "git pull upstream main && git pull upstream beta && git pull upstream nightly",
+		"git-pull": "git pull --recursive",
+		"git-ignore-reset": "git rm -r --cached . && git add . && git commit -m \"[Fix] Removing all files in .gitignore\"",
+		"npm-publish-main": "git checkout main && npm publish",
+		"npm-publish-beta": "git checkout beta && npm publish --tag beta",
+		"npm-publish-nightly": "git checkout nightly && npm publish --tag nightly",
+		"contributors-generate": "all-contributors generate",
+		"all-shields-generate": "all-shields-generate",
+		"pre-commit": "npm run contributors-generate && npm run all-shields-generate && npm run lint-fix && npm run test",
+		"pkg-clean": "rm -rf node_modules package-lock.json && npm install && husky install",
+		"pkg-update": "npm update",
+		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install"
+	},
+	"dependencies": {
+		"lowdb": "^1.0.0",
+		"telegraf": "^4.3.0",
+		"pm2": "^4.5.5"
+	},
+	"devDependencies": {
+		"@ptkdev/all-shields-cli": "^1.3.0",
+		"@types/jest": "^26.0.22",
+		"@types/lowdb": "^1.0.9",
+		"@types/node": "^14.14.37",
+		"@types/shelljs": "^0.8.8",
+		"@typescript-eslint/eslint-plugin": "^4.20.0",
+		"@typescript-eslint/parser": "^4.20.0",
+		"all-contributors-cli": "^6.20.0",
+		"eslint": "^7.23.0",
+		"eslint-plugin-jest": "^24.3.2",
+		"eslint-plugin-jsdoc": "^32.3.0",
+		"husky": "^6.0.0",
+		"jest": "^26.6.3",
+		"json": "^10.0.0",
+		"markserv": "^1.17.4",
+		"nodemon": "^2.0.7",
+		"shelljs": "^0.8.4",
+		"ts-jest": "^26.5.4",
+		"ttypescript": "^1.5.12",
+		"typescript": "^4.2.3",
+		"typescript-transform-paths": "^2.2.3",
+		"yargs": "^16.2.0"
+	},
+	"keywords": [
+		"ptkdev",
+		"node",
+		"node-module",
+		"node-library",
+		"node-telegram-bot-boilerplate",
+		"node-library-boilerplate",
+		"boilerplate",
+		"github-template"
+	],
+	"contributors": []
+}

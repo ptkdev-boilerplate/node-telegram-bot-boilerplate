@@ -1,0 +1,7 @@
+**/*
+!/.husky
+!/.github
+!/dist/**/*
+!/extra/**/*
+!*.md
+!package*.json
