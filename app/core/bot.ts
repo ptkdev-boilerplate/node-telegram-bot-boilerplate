@@ -9,7 +9,6 @@
  * @license: MIT License
  *
  */
-import type { ModuleInterface, ModuleResponseInterface } from "@app/types/bot.type";
 import { Telegraf } from "telegraf";
 import lowdb from "lowdb";
 import lowdbFileSync from "lowdb/adapters/FileSync";

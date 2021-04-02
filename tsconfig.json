@@ -11,7 +11,7 @@
 		"esModuleInterop": true,
 		"noImplicitAny": false,
 		"noImplicitThis": true,
-		"declaration": true,
+		"declaration": false,
 		"allowJs": true,
 		"paths": {
 			"@databases/*": ["./database/*"],

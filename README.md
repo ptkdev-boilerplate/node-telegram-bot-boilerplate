@@ -18,6 +18,7 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 
 -   💡 [Features](#-features)
 -   🚀 [How to use](#-usage)
+-   📚 [Documentation](#-documentation)
 -   🔨 [Developer Mode](#-developer-mode)
 -   👨‍💻 [Contributing](#-contributing)
 -   🐛 [Known Bugs](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
