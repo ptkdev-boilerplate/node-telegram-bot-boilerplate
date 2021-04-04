@@ -1,7 +1,7 @@
 # 🤖 node-telegram-bot-boilerplate
 
 <!-- all-shields/header-badges:START -->
-[![v1.0.20210331](https://img.shields.io/badge/version-v1.0.20210331-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/node-telegram-bot-boilerplate?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/node-telegram-bot-boilerplate) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io) 
+[![v1.0.20210404](https://img.shields.io/badge/version-v1.0.20210404-lightgray.svg?style=flat&logo=)](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/blob/main/CHANGELOG.md) [![](https://img.shields.io/npm/v/@ptkdev/node-telegram-bot-boilerplate?color=CC3534&logo=npm)](https://www.npmjs.com/package/@ptkdev/node-telegram-bot-boilerplate) [![License: MIT](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat&logo=license)](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/blob/main/LICENSE.md) [![Language: TypeScript](https://img.shields.io/badge/language-typescript-blue.svg?style=flat&logo=typescript)](https://www.typescriptlang.org/) [![ECMAScript: 2019](https://img.shields.io/badge/ES-9-F7DF1E.svg?style=flat&logo=javascript)](https://github.com/tc39/ecma262) [![Discord Server](https://discordapp.com/api/guilds/383373985666301975/embed.png)](https://discord.ptkdev.io) 
 <!-- all-shields/header-badges:END -->
 
 Create your telegram bot with this friendly boilerplate. Use this respository as template for your bot
@@ -20,6 +20,8 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 -   🚀 [How to use](#-usage)
 -   📚 [Documentation](#-documentation)
 -   🔨 [Developer Mode](#-developer-mode)
+-   -   ⚡ [Run Project](#-run-project)
+-   -   ⚙️ [Setup Project](#-setup-project)
 -   👨‍💻 [Contributing](#-contributing)
 -   🐛 [Known Bugs](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 -   🍻 Community:
@@ -44,17 +46,23 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 
 1. Clone this repository or download [nightly](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/nightly.zip), [beta](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/beta.zip) or [stable](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
-3. Run with correct values: `npm run init --username name_bot --token asdfghjkl`
-4. Run `npm install`
+3. Run with correct values: `npm run init:token --username name_bot --token asdfghjkl`
+4. Run `npm run init`
 5. Run `npm run start-pm2`
 
 ## 🔨 Developer Mode
 
+#### 🧑‍💻 Run Project
+
 1. Clone this repository or download [nightly](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/nightly.zip), [beta](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/beta.zip) or [stable](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
-3. Run with correct values: `npm run init --username name_bot --token asdfghjkl`
-4. Run `npm install`
+3. Run with correct values: `npm run init:token --username name_bot --token asdfghjkl`
+4. Run `npm run init`
 5. Run `npm run dev`
+
+#### ⚙️ Setup Project
+
+If you want replace all strings (example: package name, author, urls, etc...) in markdown file, source files and others files of this project you need edit `setup.json` with correct values and run `npm run setup`.
 
 ## 📚 Documentation
 
