@@ -35,7 +35,7 @@ const writeUser = async (json: TelegramUserInterface): Promise<void> => {
 	const user_id = databases.users.get("users").find({ id: json.id }).value();
 
 	if (user_id) {
-		databases.users.get("users").find({ id: user_id }).assign(json).write();
+		databases.users.get("users").find({ id: user_id.id }).assign(json).write();
 	} else {
 		databases.users.get("users").push(json).write();
 	}
