@@ -11,7 +11,6 @@
  * @license: MIT License
  *
  */
-import * as shell from "shelljs";
 const replace = require("replace-in-file");
 const setup = require("../setup.json");
 const pkg = require("../package.json");
@@ -109,7 +108,7 @@ const pkg = require("../package.json");
 		await replace({
 			files: ["**/*", ".*", "**/.*"],
 			ignore: ["node_modules/**/*", "setup.json", "package-lock.json", "scripts/setup.ts", ".all-contributorsrc"],
-			from: /Create your telegram bot with this friendly boilerplate. Use this respository as template for your bot/g,
+			from: /Create your telegram bot with this friendly boilerplate. Use this repository as template for your bot/g,
 			to: setup.description,
 		});
 	} catch (error) {
