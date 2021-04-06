@@ -17,7 +17,7 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 ## 📎 Menu
 
 -   💡 [Features](#-features)
--   🚀 [How to use](#-usage)
+-   🚀 [How to use](#-usage-deploy)
 -   📚 [Documentation](#-documentation)
 -   🔨 [Developer Mode](#-developer-mode)
 -   -   🏁 [Run Project](#-run-project)
@@ -42,13 +42,14 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 -   [✔️] Github and Vscode dotfiles preconfigured
 -   [✔️] Translations: 🇬🇧 🇮🇹 🇵🇱 (Help me ❤️)
 
-## 🚀 Usage
+## 🚀 Usage: Deploy
 
 1. Clone this repository or download [nightly](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/nightly.zip), [beta](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/beta.zip) or [stable](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
 3. Run with correct values: `npm run init:token --username name_bot --token 1234:asdfghjkl`
 4. Run `npm run init`
 5. Run `npm run start-pm2`
+6. Write `/start` on telegram bot.
 
 ## 🔨 Developer Mode
 
@@ -59,6 +60,7 @@ Create your telegram bot with this friendly boilerplate. Use this respository as
 3. Run with correct values: `npm run init:token --username name_bot --token 1234:asdfghjkl`
 4. Run `npm run init`
 5. Run `npm run dev`
+6. Write `/start` on telegram bot.
 
 #### 💾 Setup Project
 
