@@ -2,7 +2,7 @@
 	"name": "@ptkdev/node-telegram-bot-boilerplate",
 	"displayName": "Node Telegram BOT Boilerplate",
 	"description": "Create your telegram bot with this friendly boilerplate. Use this respository as template for your bot",
-	"version": "1.0.20210404",
+	"version": "1.0.20210406",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
