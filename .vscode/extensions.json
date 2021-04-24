@@ -1,6 +1,7 @@
 {
 	"recommendations": [
-		"svelte.svelte-vscode",
+		"ptkdev.dark-blood-theme",
+		"naumovs.color-highlight",
 		"esbenp.prettier-vscode",
 		"dbaeumer.vscode-eslint",
 		"gruntfuggly.todo-tree",
