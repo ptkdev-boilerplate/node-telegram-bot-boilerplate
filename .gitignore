@@ -123,5 +123,6 @@ npm-debug.log
 #######
 /app/configs/config.js
 /app/configs/config.ts
+/app/configs/config.json
 /dist
 /build
