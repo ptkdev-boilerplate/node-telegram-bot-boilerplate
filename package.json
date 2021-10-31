@@ -26,18 +26,19 @@
 	"scripts": {
 		"init": "npm install && husky install",
 		"init:token": "ts-node scripts/configs.ts && ts-node scripts/init.ts",
+		"init:certs": "ts-node scripts/initCerts.ts",
 		"setup": "ts-node --skip-project scripts/setup.ts && ts-node --skip-project scripts/changelog.ts && npm run pre-commit",
 		"start": "node dist/core/bot.js",
 		"start-pm2": "pm2 start .pm2-process.json",
 		"stop-pm2": "pm2 stop .pm2-process.json",
-		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'npm run build && npm run start'",
+		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler ttypescript app/core/bot.ts'",
 		"build": "ttsc",
 		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build && ttsc --declaration --emitDeclarationOnly",
 		"test": "jest app",
 		"docs": "git submodule update --recursive && markserv ./README.md",
 		"lint": "npm run lint-prettify && eslint . --cache --ext .ts,.js",
 		"lint-fix": "npm run lint-prettify && eslint . --cache --ext .ts,.js --fix",
-		"lint-prettify": "prettier --write **/*.{ts,md,json}",
+		"lint-prettify": "prettier --write --ignore-unknown '**/*.{ts,md,json}'",
 		"git-set-upstream": "git remote add upstream git@github.com:ptkdev-boilerplate/node-telegram-bot-boilerplate.git && git fetch upstream",
 		"git-pull-upstream": "git pull upstream main && git pull upstream beta && git pull upstream nightly",
 		"git-pull": "git pull --recursive",
@@ -53,13 +54,15 @@
 		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install"
 	},
 	"dependencies": {
+		"express": "^4.17.1",
 		"lowdb": "^1.0.0",
 		"pm2": "^4.5.6",
-		"telegraf": "^4.3.0"
+		"telegraf": "^4.4.2"
 	},
 	"devDependencies": {
 		"@ptkdev/all-shields-cli": "^2.0.2",
 		"@types/jest": "^26.0.23",
+		"@types/express": "^4.17.13",
 		"@types/lowdb": "^1.0.9",
 		"@types/node": "^15.0.1",
 		"@types/shelljs": "^0.8.8",
@@ -72,6 +75,7 @@
 		"husky": "^6.0.0",
 		"jest": "^26.6.3",
 		"json": "^11.0.0",
+		"localtunnel": "^2.0.2",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.7",
 		"prettier": "^2.2.1",

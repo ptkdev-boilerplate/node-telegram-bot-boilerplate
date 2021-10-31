@@ -35,7 +35,7 @@ export interface TelegramUserInterface {
 	 * @param { number } id - telegram
 	 *
 	 */
-	id: number,
+	id: number;
 	/**
 	 * User Interface
 	 * =====================
@@ -45,7 +45,7 @@ export interface TelegramUserInterface {
 	 * @param { boolean } is_bot - is user a bot
 	 *
 	 */
-	is_bot?: boolean,
+	is_bot?: boolean;
 	/**
 	 * User Interface
 	 * =====================
@@ -55,7 +55,7 @@ export interface TelegramUserInterface {
 	 * @param { string } first_name - user name from telegram
 	 *
 	 */
-	first_name?: string,
+	first_name?: string;
 	/**
 	 * User Interface
 	 * =====================
@@ -65,7 +65,7 @@ export interface TelegramUserInterface {
 	 * @param { string } username - user username from telegram
 	 *
 	 */
-	username?: string,
+	username?: string;
 	/**
 	 * User Interface
 	 * =====================
@@ -75,5 +75,5 @@ export interface TelegramUserInterface {
 	 * @param { string } language_code - user code language from OS
 	 *
 	 */
-	language_code?: string,
+	language_code?: string;
 }

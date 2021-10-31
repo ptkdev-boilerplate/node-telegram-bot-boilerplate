@@ -1,36 +1,40 @@
 module.exports = {
-	"env": {
-		"es6": true,
-		"node": true,
-		"browser": false,
-		"jest/globals": true
+	env: {
+		es6: true,
+		node: true,
+		browser: false,
+		"jest/globals": true,
 	},
-	"parser": "@typescript-eslint/parser",
-	"extends": ["eslint:recommended", "plugin:@typescript-eslint/eslint-recommended", "plugin:@typescript-eslint/recommended"],
-	"parserOptions": {
-		"sourceType": "module",
-		"ecmaVersion": 2019
+	parser: "@typescript-eslint/parser",
+	extends: [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+	],
+	parserOptions: {
+		sourceType: "module",
+		ecmaVersion: 2019,
 	},
-	"plugins": ["jsdoc", "jest", "@typescript-eslint"],
-	"globals": {
-		"fetch": false
+	plugins: ["jsdoc", "jest", "@typescript-eslint"],
+	globals: {
+		fetch: false,
 	},
-	"settings": {
-		"jsdoc": {
-			"tagNamePreference": {
-				"returns": "return"
-			}
-		}
+	settings: {
+		jsdoc: {
+			tagNamePreference: {
+				returns: "return",
+			},
+		},
 	},
-	"rules": {
+	rules: {
 		"no-multi-spaces": [
 			"error",
 			{
-				"ignoreEOLComments": true,
-				"exceptions": {
-					"VariableDeclarator": true
-				}
-			}
+				ignoreEOLComments: true,
+				exceptions: {
+					VariableDeclarator: true,
+				},
+			},
 		],
 		"block-spacing": ["error", "always"],
 		"array-bracket-spacing": ["error", "never"],
@@ -38,49 +42,42 @@ module.exports = {
 		"comma-spacing": [
 			"error",
 			{
-				"before": false,
-				"after": true
-			}
+				before: false,
+				after: true,
+			},
 		],
 		"key-spacing": [
 			"error",
 			{
-				"afterColon": true,
-				"beforeColon": false
-			}
+				afterColon: true,
+				beforeColon: false,
+			},
 		],
-		"indent": [
-			"error",
-			"tab",
-			{
-				"SwitchCase": 1
-			}
-		],
-		"quotes": [
+		quotes: [
 			"error",
 			"double",
 			{
-				"avoidEscape": true,
-				"allowTemplateLiterals": true
-			}
+				avoidEscape: true,
+				allowTemplateLiterals: true,
+			},
 		],
-		"semi": ["error", "always"],
+		semi: ["error", "always"],
 		"no-console": ["warn"],
 		"no-constant-condition": ["warn"],
-		"curly": ["error", "all"],
+		curly: ["error", "all"],
 		"brace-style": [
 			"error",
 			"1tbs",
 			{
-				"allowSingleLine": false
-			}
+				allowSingleLine: false,
+			},
 		],
 		"keyword-spacing": [
 			"error",
 			{
-				"before": true,
-				"after": true
-			}
+				before: true,
+				after: true,
+			},
 		],
 		"object-curly-spacing": ["error", "always"],
 		"no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
@@ -106,6 +103,6 @@ module.exports = {
 		"jsdoc/require-returns-description": 1,
 		"jsdoc/require-returns-type": 1,
 		"jsdoc/require-returns-check": 1,
-		"jsdoc/require-hyphen-before-param-description": 1
-	}
-}
+		"jsdoc/require-hyphen-before-param-description": 1,
+	},
+};

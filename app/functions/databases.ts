@@ -31,7 +31,6 @@ databases.users.defaults({ users: [] }).write();
  *
  */
 const writeUser = async (json: TelegramUserInterface): Promise<void> => {
-
 	const user_id = databases.users.get("users").find({ id: json.id }).value();
 
 	if (user_id) {
@@ -39,7 +38,6 @@ const writeUser = async (json: TelegramUserInterface): Promise<void> => {
 	} else {
 		databases.users.get("users").push(json).write();
 	}
-
 };
 
 export { databases, writeUser };

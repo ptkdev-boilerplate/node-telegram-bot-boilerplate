@@ -4,7 +4,7 @@
 	"watch": true,
 	"max_restarts": 999,
 	"max_memory_restart": "1024M",
-	"instances": "max",
+	"instances": "1",
 	"exec_mode": "cluster",
 	"error_file": "./logs/errors_pm2.log",
 	"out_file": "./logs/debug_pm2.log",
