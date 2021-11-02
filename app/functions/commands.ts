@@ -9,6 +9,8 @@
  */
 import bot from "@app/functions/telegraf";
 import * as databases from "@app/functions/databases";
+import config from "@configs/config";
+import { launchPolling, launchWebhook } from "./launcher";
 
 /**
  * command: /quit
@@ -56,7 +58,12 @@ const start = async (): Promise<void> => {
  *
  */
 const launch = async (): Promise<void> => {
-	bot.launch();
+	const mode = config.mode;
+	if (mode === "webhook") {
+		launchWebhook();
+	} else {
+		launchPolling();
+	}
 };
 
 export { launch, quit, sendPhoto, start };

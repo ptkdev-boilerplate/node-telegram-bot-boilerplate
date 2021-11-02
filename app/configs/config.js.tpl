@@ -9,6 +9,14 @@ module.exports = {
 		token: "BOT_TOKEN",
 	},
 
+	mode: "poll", // or webhook
+	webhook: {
+		url: "https://sample.host.com:8443",
+		port: 8443,
+		certsPath: "certs",
+		selfSigned: true
+	},
+
 	"databases": { users: "databases/users.json" },
 
 	// Debug

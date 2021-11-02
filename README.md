@@ -74,6 +74,26 @@ Deploy bot to your server and:
 3. Generate release `npm run release`
 4. Start bot `npm run start-pm2`
 
+#### 🪝 Running with webhook
+
+If you want to run the bot using [webhooks](https://core.telegram.org/bots/api#setwebhook) you need to place your SSL certificate and Private key in the `certs` directory and configure the webhook object int the config file like:
+
+```javascript
+webhook: {
+	url: "https://my.host.com:8443", // or dns name
+	port: 8443,
+	selfSigned: true
+},
+```
+
+If you want to run the bot with your own self-signed certificate `selfSigned` flag needs to be set to `true`, this will allow us to communicate to telegram that our webhook server can be trusted. More information about webhooks with self-signed certificates can be found [here](https://core.telegram.org/bots/self-signed)
+
+you can generate your own self-signed certificate yousing the utility script:
+
+`npm run init:certs [common-name]`
+
+Replace `commond-name` with the same host-name or ip address you are using in the `webhook.url` path of the `config.js` file
+
 ## 📚 Documentation
 
 Run `npm run docs`
@@ -96,6 +116,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://ptk.dev"><img src="https://avatars1.githubusercontent.com/u/442844?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Patryk Rzucidło</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Code">💻</a> <a href="#translation-ptkdev" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Documentation">📖</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=author%3Aptkdev" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://edge33.github.io"><img src="https://avatars1.githubusercontent.com/u/5662280?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francesco Maida</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Code">💻</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Documentation">📖</a></td>
   </tr>
 </table>
 

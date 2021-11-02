@@ -126,3 +126,4 @@ npm-debug.log
 /app/configs/config.json
 /dist
 /build
+/certs

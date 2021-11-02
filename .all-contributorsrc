@@ -20,6 +20,16 @@
 				"doc",
 				"bug"
 			]
+		},
+		{
+			"login": "edge33",
+			"name": "Francesco Maida",
+			"avatar_url": "https://avatars1.githubusercontent.com/u/5662280?v=4",
+			"profile": "https://edge33.github.io",
+			"contributions": [
+				"code",
+				"doc"
+			]
 		}
 	],
 	"contributorsPerLine": 6,
