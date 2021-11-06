@@ -7,13 +7,12 @@
  * @license: MIT License
  *
  */
+import type { TelegramUserInterface } from "@app/types/databases.type";
+import configs from "@configs/config";
 import lowdb from "lowdb";
 import lowdbFileSync from "lowdb/adapters/FileSync";
-import configs from "@configs/config";
 
-import type { TelegramUserInterface } from "@app/types/databases.type";
-
-const databases = { users: null };
+const databases = { users: lowdb(new lowdbFileSync<{ users: TelegramUserInterface[] }>(configs.databases.users)) };
 
 databases.users = lowdb(new lowdbFileSync(configs.databases.users));
 databases.users.defaults({ users: [] }).write();
