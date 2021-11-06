@@ -63,6 +63,7 @@
 		"@ptkdev/all-shields-cli": "^2.0.2",
 		"@types/jest": "^26.0.23",
 		"@types/express": "^4.17.13",
+		"@types/localtunnel": "^2.0.1",
 		"@types/lowdb": "^1.0.9",
 		"@types/node": "^15.0.1",
 		"@types/shelljs": "^0.8.8",
