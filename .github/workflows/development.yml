@@ -1,0 +1,19 @@
+name: Development build
+
+on:
+  pull_request:
+    types: 
+    - synchronize
+    - opened
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{github.event.repository.name}}:$(date +%s)
