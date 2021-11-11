@@ -30,6 +30,7 @@
 		"setup": "ts-node --skip-project scripts/setup.ts && ts-node --skip-project scripts/changelog.ts && npm run pre-commit",
 		"start": "node dist/core/bot.js",
 		"start-pm2": "pm2 start .pm2-process.json",
+		"start-docker": "pm2-runtime .pm2-process.json",
 		"stop-pm2": "pm2 stop .pm2-process.json",
 		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler ttypescript app/core/bot.ts'",
 		"build": "ttsc",
@@ -56,6 +57,7 @@
 	"dependencies": {
 		"express": "^4.17.1",
 		"lowdb": "^1.0.0",
+		"localtunnel": "^2.0.2",
 		"pm2": "^4.5.6",
 		"telegraf": "^4.4.2"
 	},
@@ -76,7 +78,6 @@
 		"husky": "^6.0.0",
 		"jest": "^26.6.3",
 		"json": "^11.0.0",
-		"localtunnel": "^2.0.2",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.7",
 		"prettier": "^2.2.1",
