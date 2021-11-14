@@ -52,7 +52,7 @@ This is a [github template](https://github.blog/2019-06-06-generate-new-reposito
 
 ## 🔨 Developer Mode
 
-#### 🏁 Run Project
+### 🏁 Run Project
 
 1. Clone this repository or download [nightly](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/nightly.zip), [beta](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/beta.zip) or [stable](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/archive/main.zip).
 2. Write to [@botfather](https://t.me/botfather) on telegram and create new bot (save token and set bot username)
@@ -61,20 +61,11 @@ This is a [github template](https://github.blog/2019-06-06-generate-new-reposito
 5. Run `npm run dev`
 6. Write `/start` on telegram bot.
 
-#### 💾 Setup Project
+### 💾 Setup Project
 
 If you want replace all strings (example: package name, author, urls, etc...) in markdown file, source files and others files of this project you need edit `setup.json` with correct values and run `npm run setup`.
 
-#### 🚀 Deploy
-
-Deploy bot to your server and:
-
-1. Run with correct values: `npm run init:token --token asdfghjkl`
-2. Run init `npm run init`
-3. Generate release `npm run release`
-4. Start bot `npm run start-pm2`
-
-#### 🪝 Running with webhook
+#### 🪝 Configuring Webhooks
 
 If you want to run the bot using [webhooks](https://core.telegram.org/bots/api#setwebhook) you need to place your SSL certificate and Private key in the `certs` directory and configure the webhook object int the config file like:
 
@@ -93,6 +84,45 @@ you can generate your own self-signed certificate yousing the utility script:
 `npm run init:certs [common-name]`
 
 Replace `commond-name` with the same host-name or ip address you are using in the `webhook.url` path of the `config.js` file
+
+## 🖥️ Deploy
+
+### 🚀 Native Run
+
+Deploy bot to your server and:
+
+1. Run with correct values: `npm run init:token --token asdfghjkl`
+2. Run init `npm run init`
+3. Generate release `npm run release`
+4. Start bot `npm run start-pm2`
+
+### 🐳 Docker
+
+You can also release and run your bot as a Docker container.
+
+```sh
+docker run ptkdev/node-telegram-bot-boilerplate:<version>
+```
+
+where `<version>` can be one of the releases (ex. v1.0.0) or `latest`
+
+For your convenience, in case you would like to run the bot in `webhook` mode, we already expose `8443` port on our docker files.
+
+To change the configuration to match yours, just change the Dockerfile line with the `EXPOSE` instruction
+
+```docker
+EXPOSE 8443
+```
+
+at the end, you'll be able to expose the docker port using `-p <port>:<host-port>` docker parameter.
+
+The preferred way to provide the configuration file is to mount the final configuration under `/app/dist/configs/config.js`:
+
+```sh
+docker run -v ${PWD}/app/configs/config.js:/app/dist/configs/config.js ptkdev/node-telegram-bot-boilerplate:<version>
+```
+
+> Note: the docker images have been prepared for many architectures but have been tested mainly on amd64 architecture.
 
 ## 📚 Documentation
 

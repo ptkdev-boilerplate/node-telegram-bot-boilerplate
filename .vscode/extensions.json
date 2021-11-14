@@ -6,6 +6,7 @@
 		"dbaeumer.vscode-eslint",
 		"gruntfuggly.todo-tree",
 		"nickdodd79.gulptasks",
-		"pkief.material-icon-theme"
+		"pkief.material-icon-theme",
+		"exiasr.hadolint"
 	]
 }

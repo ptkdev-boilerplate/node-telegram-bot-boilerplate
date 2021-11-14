@@ -1,0 +1,15 @@
+{
+	"name": "node-telegram-bot-boilerplate",
+	"script": "dist/core/bot.js",
+	"watch": false,
+	"max_restarts": 0,
+	"max_memory_restart": "1024M",
+	"instances": 1,
+	"out_file": "/dev/null",
+	"error_file": "/dev/null",
+	"exec_mode": "fork",
+	"cwd": "./",
+	"watch_options": {
+		"followSymlinks": false
+	}
+}
