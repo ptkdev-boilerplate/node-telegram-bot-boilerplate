@@ -30,6 +30,16 @@
 				"code",
 				"doc"
 			]
+		},
+		{
+			"login": "verhyppo",
+			"name": "Veronica Di Giorgio",
+			"avatar_url": "https://avatars.githubusercontent.com/u/3539384?v=4",
+			"profile": "https://verhyppo.github.io",
+			"contributions": [
+				"infra",
+				"doc"
+			]
 		}
 	],
 	"contributorsPerLine": 6,
