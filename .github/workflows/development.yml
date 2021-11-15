@@ -5,6 +5,10 @@ on:
     types: 
     - synchronize
     - opened
+  push:
+    branches:
+    - nightly
+    - main
 
 jobs:
 

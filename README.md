@@ -6,13 +6,13 @@
 
 <!-- all-shields/header-badges:END -->
 
-Create your telegram bot with this friendly boilerplate. Use this repository as template for your bot
+Create your telegram bot with this friendly boilerplate. Use this repository as a template for your bot
 
-This is a [github template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/), you can fork it or [use as template](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/generate) for start new project with this repository as hello-world. I hate start new project with empty template, often i missing correct configuration, readme instruction or i need of samples of code. Use this repository as template solve this problem.
+This is a [github template](https://github.blog/2019-06-06-generate-new-repositories-with-repository-templates/), you can fork it or [use it as a template](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/generate) to start a new project with this repository as hello-world. I hate to start a new project with an empty template, often I miss correct configuration, readme instruction or I need samples of code. Use this repository as a template to solve this problem.
 
 ## 🎁 Support: Donate
 
-> This project is **free**, **open source** and I try to provide excellent **free support**. Why donate? I work on this project several hours in my spare time and try to keep it up to date and working. **THANK YOU!**
+> This project is **free**, **open source** and I try to provide excellent **free support**. Why donate? I work on this project for several hours in my spare time and try to keep it up to date and working. **THANK YOU!**
 
 <!-- all-shields/sponsors-badges:START -->
 
@@ -31,9 +31,9 @@ This is a [github template](https://github.blog/2019-06-06-generate-new-reposito
 -   👨‍💻 [Contributing](#-contributing)
 -   🐛 [Known Bugs](https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 -   🍻 Community:
-    -   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_telegram.png" height="18px"> Telegram ([🇬🇧 English](http://t.me/ptkdev_support) | [🇮🇹 Italian](http://t.me/ptkdev_support_italian))
-    -   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_discord.png" height="18px"> [Discord](http://discord.ptkdev.io) ([🇬🇧 English](https://discord.gg/jqUSGPKdmA) | [🇮🇹 Italian](https://discord.gg/SJFcbvG6RU) | [🇵🇱 Polish](https://discord.gg/25vg4VFhb7))
-    -   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_twitter.png" height="18px"> [Twitter](http://twitter.com/ptkdevio)
+-   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_telegram.png" height="18px"> Telegram ([🇬🇧 English](http://t.me/ptkdev_support) | [🇮🇹 Italian](http://t.me/ptkdev_support_italian))
+-   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_discord.png" height="18px"> [Discord](http://discord.ptkdev.io) ([🇬🇧 English](https://discord.gg/jqUSGPKdmA) | [🇮🇹 Italian](https://discord.gg/SJFcbvG6RU) | [🇵🇱 Polish](https://discord.gg/25vg4VFhb7))
+-   <img src="https://raw.githubusercontent.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/main/.github/assets/social_twitter.png" height="18px"> [Twitter](http://twitter.com/ptkdevio)
 
 ## 💡 Features
 
@@ -43,7 +43,7 @@ This is a [github template](https://github.blog/2019-06-06-generate-new-reposito
 -   [✔️] Friendly boilerplate + Github templates
 -   [✔️] Typescript + TSPaths preconfigured
 -   [✔️] Userfriendly folders tree
--   [✔️] Prettiers and ESLint preconfigured
+-   [✔️] Prettify and ESLint preconfigured
 -   [✔️] all-contributors-cli and all-shields-cli preconfigured
 -   [✔️] JEST Test preconfigured
 -   [✔️] Full async code
@@ -63,27 +63,27 @@ This is a [github template](https://github.blog/2019-06-06-generate-new-reposito
 
 ### 💾 Setup Project
 
-If you want replace all strings (example: package name, author, urls, etc...) in markdown file, source files and others files of this project you need edit `setup.json` with correct values and run `npm run setup`.
+If you want to replace all strings (example: package name, author, URLs, etc...) in the markdown file, source files and others files of this project you need to edit `setup.json` with correct values and run `npm run setup`.
 
 #### 🪝 Configuring Webhooks
 
-If you want to run the bot using [webhooks](https://core.telegram.org/bots/api#setwebhook) you need to place your SSL certificate and Private key in the `certs` directory and configure the webhook object int the config file like:
+If you want to run the bot using [webhooks](https://core.telegram.org/bots/api#setwebhook) you need to place your SSL certificate and Private key in the `certs` directory and configure the webhook object in the config file like:
 
 ```javascript
 webhook: {
-	url: "https://my.host.com:8443", // or dns name
-	port: 8443,
-	selfSigned: true
+ url: "https://my.host.com:8443", // or DNS name
+ port: 8443,
+ selfSigned: true
 },
 ```
 
-If you want to run the bot with your own self-signed certificate `selfSigned` flag needs to be set to `true`, this will allow us to communicate to telegram that our webhook server can be trusted. More information about webhooks with self-signed certificates can be found [here](https://core.telegram.org/bots/self-signed)
+If you want to run the bot with your self-signed certificate `selfSigned` flag needs to be set to `true`, this will allow us to communicate to Telegram that our webhook server can be trusted. More information about webhooks with self-signed certificates can be found [here](https://core.telegram.org/bots/self-signed)
 
-you can generate your own self-signed certificate yousing the utility script:
+you can generate your self-signed certificate using the utility script:
 
 `npm run init:certs [common-name]`
 
-Replace `commond-name` with the same host-name or ip address you are using in the `webhook.url` path of the `config.js` file
+Replace `common-name` with the same host-name or IP address you are using in the `webhook.url` path of the `config.js` file
 
 ## 🖥️ Deploy
 
@@ -106,7 +106,7 @@ docker run ptkdev/node-telegram-bot-boilerplate:<version>
 
 where `<version>` can be one of the releases (ex. v1.0.0) or `latest`
 
-For your convenience, in case you would like to run the bot in `webhook` mode, we already expose `8443` port on our docker files.
+For your convenience, in case you would like to run the bot in `webhook` mode, we have already exposed `8443` port on our docker files.
 
 To change the configuration to match yours, just change the Dockerfile line with the `EXPOSE` instruction
 
@@ -114,7 +114,7 @@ To change the configuration to match yours, just change the Dockerfile line with
 EXPOSE 8443
 ```
 
-at the end, you'll be able to expose the docker port using `-p <port>:<host-port>` docker parameter.
+in the end, you'll be able to expose the docker port using `-p <port>:<host-port>` docker parameter.
 
 The preferred way to provide the configuration file is to mount the final configuration under `/app/dist/configs/config.js`:
 
@@ -136,7 +136,7 @@ Thanks to all our backers! 🙏 Donate 3$ or more on [paypal](https://www.paypal
 
 ## 👨‍💻 Contributing
 
-I ❤️ contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` file.
+I ❤️ contributions! I will happily accept your pull request! Translations, grammatical corrections (GrammarNazi you are welcome! Yes my English is bad, sorry), etc... Do not be afraid, if the code is not perfect we will work together 👯 and remember to insert your name in `.all-contributorsrc` and `package.json` files.
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -156,7 +156,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-> 💰 In the future, if the donations allow it, I would like to share some of the success with those who helped me the most. For me open source is share of code, share development knowledges and share donations!
+> 💰 In the future, if the donations allow it, I would like to share some of the success with those who helped me the most. To me, Open Source means sharing code, development knowledge and also donations!
 
 ## 🦄 Other Projects
 
