@@ -2,7 +2,7 @@
 	"name": "@ptkdev/node-telegram-bot-boilerplate",
 	"displayName": "Node Telegram BOT Boilerplate",
 	"description": "Create your telegram bot with this friendly boilerplate. Use this repository as template for your bot",
-	"version": "1.0.20210412",
+	"version": "1.0.20211121",
 	"main": "dist/core/bot.js",
 	"publishConfig": {
 		"access": "public"
@@ -32,8 +32,8 @@
 		"start-pm2": "pm2 start .pm2-process.json",
 		"start-docker": "pm2-runtime .pm2-docker.json",
 		"stop-pm2": "pm2 stop .pm2-process.json",
-		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler ttypescript app/core/bot.ts'",
-		"build": "ttsc",
+		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler typescript app/core/bot.ts'",
+		"build": "tsc",
 		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build && ttsc --declaration --emitDeclarationOnly",
 		"test": "jest app",
 		"docs": "git submodule update --recursive && markserv ./README.md",
@@ -52,16 +52,17 @@
 		"pre-commit": "npm run contributors-generate && npm run all-shields-generate && npm run lint-fix && npm run test",
 		"pkg-clean": "rm -rf node_modules package-lock.json && npm install && husky install",
 		"pkg-update": "npm update",
-		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install"
+		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install",
+		"prepare": "ts-patch install -s"
 	},
 	"dependencies": {
 		"express": "^4.17.1",
 		"lowdb": "^1.0.0",
 		"localtunnel": "^2.0.2",
-		"pm2": "^4.5.6",
 		"telegraf": "^4.4.2"
 	},
 	"devDependencies": {
+		"pm2": "^4.5.6",
 		"@ptkdev/all-shields-cli": "^2.0.2",
 		"@types/jest": "^26.0.23",
 		"@types/express": "^4.17.13",
@@ -85,7 +86,7 @@
 		"shelljs": "^0.8.4",
 		"ts-jest": "^26.5.5",
 		"ts-node": "^9.1.1",
-		"ttypescript": "^1.5.12",
+		"ts-patch": "^2.0.1",
 		"typescript": "^4.2.4",
 		"typescript-transform-paths": "^2.2.3",
 		"yargs": "^16.2.0"
