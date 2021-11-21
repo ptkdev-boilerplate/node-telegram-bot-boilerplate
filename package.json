@@ -34,7 +34,7 @@
 		"stop-pm2": "pm2 stop .pm2-process.json",
 		"dev": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --enable && ts-node scripts/rmdist.ts && nodemon --exec 'ts-node --compiler typescript app/core/bot.ts'",
 		"build": "tsc",
-		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build && ttsc --declaration --emitDeclarationOnly",
+		"release": "ts-node scripts/configs.ts && ts-node scripts/debug.ts --disable && npm run build && tsc --declaration --emitDeclarationOnly",
 		"test": "jest app",
 		"docs": "git submodule update --recursive && markserv ./README.md",
 		"lint": "npm run lint-prettify && eslint . --cache --ext .ts,.js",
