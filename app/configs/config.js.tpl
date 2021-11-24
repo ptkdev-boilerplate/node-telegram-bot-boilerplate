@@ -14,7 +14,7 @@ module.exports = {
 		url: "https://sample.host.com:8443",
 		port: 8443,
 		certsPath: "certs",
-		selfSigned: true
+		self_signed: true
 	},
 
 	"databases": { users: "databases/users.json" },
