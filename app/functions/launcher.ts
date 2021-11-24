@@ -16,57 +16,57 @@ const launchPolling = (): void => {
 	bot.launch();
 };
 
-const launchSelfSigned = async (webhookUrl: string, secretPath: string) => {
+const launchSelfSigned = async (webhook_url: string, secret_path: string) => {
 	const { port } = config.webhook;
 	const path = `${process.cwd()}/certs`;
 	const cert = fs.readFileSync(`${path}/PUBLIC.pem`);
 	const pk = fs.readFileSync(`${path}/PK.key`);
-	const tlsOptions = {
+	const tls_options = {
 		key: pk,
 		cert: cert,
 	};
 	await bot.launch({
 		webhook: {
-			tlsOptions,
-			hookPath: secretPath,
+			tlsOptions: tls_options,
+			hookPath: secret_path,
 			port: port,
 		},
 	});
-	bot.telegram.setWebhook(`${webhookUrl}${secretPath}`, {
+	bot.telegram.setWebhook(`${webhook_url}${secret_path}`, {
 		certificate: {
 			source: cert,
 		},
 	});
 };
 
-const launchLocalTunnel = async (secretPath: string, port: number) => {
+const launchLocalTunnel = async (secret_path: string, port: number) => {
 	const tunnel = await localtunnel({ port });
 	bot.launch({
 		webhook: {
 			domain: tunnel.url,
-			hookPath: secretPath,
+			hookPath: secret_path,
 			port: port,
 		},
 	});
 };
 
 const launchWebhook = async (): Promise<void> => {
-	const { port, url, selfSigned } = config.webhook;
-	const secretPath = `/telegraf/${bot.secretPathComponent()}`;
+	const { port, url, self_signed } = config.webhook;
+	const secret_path = `/telegraf/${bot.secretPathComponent()}`;
 
 	// Set telegram webhook
 	// this runs localtunnel to develop the bot on localhost
 	// acts as a reverse proxy for telegrm calls to our websocket
-	const webhookUrl = url;
+	const webhook_url = url;
 	if (config.debug) {
-		return launchLocalTunnel(secretPath, port);
-	} else if (selfSigned) {
-		return launchSelfSigned(webhookUrl, secretPath);
+		return launchLocalTunnel(secret_path, port);
+	} else if (self_signed) {
+		return launchSelfSigned(webhook_url, secret_path);
 	} else {
 		return bot.launch({
 			webhook: {
-				domain: webhookUrl,
-				hookPath: secretPath,
+				domain: webhook_url,
+				hookPath: secret_path,
 				port: port,
 			},
 		});
