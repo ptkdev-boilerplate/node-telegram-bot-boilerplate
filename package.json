@@ -53,12 +53,15 @@
 		"pkg-clean": "rm -rf node_modules package-lock.json && npm install && husky install",
 		"pkg-update": "npm update",
 		"pkg-upgrade": "npx npm-check-updates -u && npm install && husky install",
-		"prepare": "ts-patch install -s"
+		"prebuild": "npm run ts-patch",
+		"predev": "npm run ts-patch",
+		"ts-patch": "ts-patch install -s"
 	},
 	"dependencies": {
 		"localtunnel": "^2.0.2",
 		"lowdb": "^1.0.0",
-		"telegraf": "^4.4.2"
+		"telegraf": "^4.4.2",
+		"pm2": "^4.x.x"
 	},
 	"devDependencies": {
 		"@ptkdev/all-shields-cli": "^2.0.2",
@@ -79,7 +82,6 @@
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.7",
-		"pm2": "^4.5.6",
 		"prettier": "^2.2.1",
 		"replace-in-file": "^6.2.0",
 		"shelljs": "^0.8.4",
