@@ -7,9 +7,11 @@
  * @license: MIT License
  *
  */
-import * as shell from "shelljs";
-declare const __dirname: string;
+import shell from "shelljs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const path = `${__dirname}/../dist`;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const config_path = `${__dirname}/../app/configs/config.ts`;
 
-shell.rm("-Rf", path);
+shell.rm("-Rf", config_path);

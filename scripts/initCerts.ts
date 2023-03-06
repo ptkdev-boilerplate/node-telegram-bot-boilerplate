@@ -11,7 +11,7 @@
  */
 import * as fs from "fs";
 import * as shell from "shelljs";
-import { argv } from "yargs";
+import yargs from "yargs";
 
 const certPaths = `${__dirname}/../certs`;
 
@@ -19,6 +19,7 @@ if (!fs.existsSync(certPaths)) {
 	console.log("cert paths not found creating");
 	fs.mkdirSync(certPaths);
 }
+const argv = yargs(process.argv.slice(2)).parseSync();
 const cn = argv._[0];
 if (!cn) {
 	console.error("No CN provided, exiting, please provide a valid CN for certs, i.e myhost.com or 126.234.243.10");
