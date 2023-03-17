@@ -30,7 +30,8 @@
 		]
 	},
 	"ts-node": {
-		"esm": true
+		"esm": true,
+		"experimentalSpecifierResolution": "node"
 	},
 	"include": ["app/**/*"],
 	"exclude": ["node_modules/*", "dist/*", "scripts/*"]

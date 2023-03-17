@@ -12,6 +12,6 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const config_path = `${__dirname}/../app/configs/config.ts`;
+const config_path = `${__dirname}/../dist`;
 
 shell.rm("-Rf", config_path);

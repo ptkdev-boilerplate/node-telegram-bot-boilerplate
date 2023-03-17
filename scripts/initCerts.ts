@@ -9,10 +9,13 @@
  * @license: MIT License
  *
  */
-import * as fs from "fs";
-import * as shell from "shelljs";
+import fs from "fs";
+import shell from "shelljs";
 import yargs from "yargs";
+import path from "path";
+import { fileURLToPath } from "url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const certPaths = `${__dirname}/../certs`;
 
 if (!fs.existsSync(certPaths)) {

@@ -3,7 +3,7 @@
 	"displayName": "Node Telegram BOT Boilerplate",
 	"description": "Create your telegram bot with this friendly boilerplate. Use this repository as template for your bot",
 	"version": "1.0.20211121",
-	"main": "dist/core/bot.js",
+	"exports": "dist/core/bot.js",
 	"type": "module",
 	"publishConfig": {
 		"access": "public"
@@ -22,7 +22,7 @@
 		"url": "https://github.com/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues"
 	},
 	"engines": {
-		"node": ">=14.0.0"
+		"node": ">=14.16"
 	},
 	"scripts": {
 		"init": "npm install && husky install",
@@ -57,32 +57,31 @@
 		"prepare": "ts-patch install -s"
 	},
 	"dependencies": {
-		"express": "^4.18.2",
-		"localtunnel": "^2.0.2",
-		"lowdb": "^5.1.0",
-		"telegraf": "^4.11.2"
+		"lowdb": "^4.0.1",
+		"telegraf": "^4.12.2"
 	},
 	"devDependencies": {
+		"localtunnel": "^2.0.2",
 		"@ptkdev/all-shields-cli": "^2.0.2",
 		"@types/express": "^4.17.17",
-		"@types/jest": "^29.4.0",
+		"@types/jest": "^29.5.0",
 		"@types/localtunnel": "^2.0.1",
 		"@types/lowdb": "^1.0.11",
-		"@types/node": "^18.14.6",
+		"@types/node": "^18.15.3",
 		"@types/shelljs": "^0.8.11",
 		"@types/yargs": "^17.0.22",
-		"@typescript-eslint/eslint-plugin": "^5.54.0",
-		"@typescript-eslint/parser": "^5.54.0",
+		"@typescript-eslint/eslint-plugin": "^5.55.0",
+		"@typescript-eslint/parser": "^5.55.0",
 		"all-contributors-cli": "^6.24.0",
-		"eslint": "^8.35.0",
+		"eslint": "^8.36.0",
 		"eslint-plugin-jest": "^27.2.1",
-		"eslint-plugin-jsdoc": "^40.0.1",
+		"eslint-plugin-jsdoc": "^40.0.3",
 		"husky": "^8.0.3",
-		"jest": "^29.4.3",
+		"jest": "^29.5.0",
 		"json": "^11.0.0",
 		"markserv": "^1.17.4",
 		"nodemon": "^2.0.21",
-		"pm2": "^5.2.2",
+		"pm2": "^5.3.0",
 		"prettier": "^2.8.4",
 		"replace-in-file": "^6.3.5",
 		"shelljs": "^0.8.5",

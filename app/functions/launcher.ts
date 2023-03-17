@@ -10,7 +10,6 @@
 import bot from "./telegraf";
 import config from "@configs/config";
 import fs from "fs";
-import localtunnel from "localtunnel";
 
 const launchPolling = (): void => {
 	bot.launch();
@@ -27,19 +26,21 @@ const launchSelfSigned = async (webhookUrl: string, secretPath: string) => {
 	};
 	await bot.launch({
 		webhook: {
+			domain: webhookUrl,
 			tlsOptions,
 			hookPath: secretPath,
 			port: port,
 		},
 	});
-	bot.telegram.setWebhook(`${webhookUrl}${secretPath}`, {
-		certificate: {
-			source: cert,
-		},
-	});
+	// await bot.telegram.setWebhook(`${webhookUrl}${secretPath}`, {
+	// 	certificate: {
+	// 		source: cert,
+	// 	},
+	// });
 };
 
 const launchLocalTunnel = async (secretPath: string, port: number) => {
+	const localtunnel = (await import("localtunnel")).default;
 	const tunnel = await localtunnel({ port });
 	bot.launch({
 		webhook: {
@@ -50,7 +51,7 @@ const launchLocalTunnel = async (secretPath: string, port: number) => {
 	});
 };
 
-const launchWebhook = async (): Promise<void> => {
+const launchWebhook = async (mode: string): Promise<void> => {
 	const { port, url, selfSigned } = config.webhook;
 	const secretPath = `/telegraf/${bot.secretPathComponent()}`;
 
@@ -58,9 +59,9 @@ const launchWebhook = async (): Promise<void> => {
 	// this runs localtunnel to develop the bot on localhost
 	// acts as a reverse proxy for telegrm calls to our websocket
 	const webhookUrl = url;
-	if (config.debug) {
+	if (mode === "localtunnel") {
 		return launchLocalTunnel(secretPath, port);
-	} else if (selfSigned) {
+	} else if (mode === "webhook") {
 		return launchSelfSigned(webhookUrl, secretPath);
 	} else {
 		return bot.launch({
