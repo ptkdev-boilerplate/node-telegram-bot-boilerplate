@@ -10,14 +10,14 @@
 import bot from "./telegraf";
 import config from "@configs/config";
 import fs from "fs";
-import localtunnel from "localtunnel";
+import { Input } from "telegraf";
 
 const launchPolling = (): void => {
 	bot.launch();
 };
 
-const launchSelfSigned = async (webhook_url: string, secret_path: string) => {
-	const { port } = config.webhook;
+const launchSelfSigned = async () => {
+	const { port, url } = config.webhook;
 	const path = `${process.cwd()}/certs`;
 	const cert = fs.readFileSync(`${path}/PUBLIC.pem`);
 	const pk = fs.readFileSync(`${path}/PK.key`);
@@ -25,23 +25,22 @@ const launchSelfSigned = async (webhook_url: string, secret_path: string) => {
 		key: pk,
 		cert: cert,
 	};
+	const certFile = Input.fromLocalFile(`${path}/PUBLIC.pem`);
+
 	await bot.launch({
 		webhook: {
-			tlsOptions: tls_options,
-			hookPath: secret_path,
+			domain: url,
 			port: port,
-		},
-	});
-	bot.telegram.setWebhook(`${webhook_url}${secret_path}`, {
-		certificate: {
-			source: cert,
+			certificate: certFile,
+			tlsOptions: tls_options,
 		},
 	});
 };
 
 const launchLocalTunnel = async (secret_path: string, port: number) => {
+	const localtunnel = (await import("localtunnel")).default;
 	const tunnel = await localtunnel({ port });
-	bot.launch({
+	await bot.launch({
 		webhook: {
 			domain: tunnel.url,
 			hookPath: secret_path,
@@ -50,22 +49,23 @@ const launchLocalTunnel = async (secret_path: string, port: number) => {
 	});
 };
 
-const launchWebhook = async (): Promise<void> => {
+const launchWebhook = async (mode: string): Promise<void> => {
 	const { port, url, self_signed } = config.webhook;
 	const secret_path = `/telegraf/${bot.secretPathComponent()}`;
 
 	// Set telegram webhook
 	// this runs localtunnel to develop the bot on localhost
 	// acts as a reverse proxy for telegrm calls to our websocket
-	const webhook_url = url;
-	if (config.debug) {
+	if (mode === "localtunnel") {
 		return launchLocalTunnel(secret_path, port);
-	} else if (self_signed) {
-		return launchSelfSigned(webhook_url, secret_path);
+	}
+
+	if (mode === "webhook" && self_signed) {
+		return launchSelfSigned();
 	} else {
 		return bot.launch({
 			webhook: {
-				domain: webhook_url,
+				domain: url,
 				hookPath: secret_path,
 				port: port,
 			},

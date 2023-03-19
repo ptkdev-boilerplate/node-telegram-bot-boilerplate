@@ -9,8 +9,8 @@
  */
 import bot from "@app/functions/telegraf";
 import * as databases from "@app/functions/databases";
-import config from "@configs/config";
 import { launchPolling, launchWebhook } from "./launcher";
+import config from "@configs/config";
 
 /**
  * command: /quit
@@ -59,8 +59,8 @@ const start = async (): Promise<void> => {
  */
 const launch = async (): Promise<void> => {
 	const mode = config.mode;
-	if (mode === "webhook") {
-		launchWebhook();
+	if (["webhook", "localtunnel"].includes(mode)) {
+		launchWebhook(mode);
 	} else {
 		launchPolling();
 	}

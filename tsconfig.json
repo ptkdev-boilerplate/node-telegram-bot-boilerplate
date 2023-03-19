@@ -1,7 +1,7 @@
 {
 	"compilerOptions": {
-		"module": "CommonJS",
-		"target": "ES6",
+		"module": "esnext",
+		"target": "es2022",
 		"sourceMap": true,
 		"outDir": "./dist/",
 		"lib": ["es2017", "es7", "es6", "DOM"],
@@ -28,6 +28,10 @@
 			{ "transform": "typescript-transform-paths" },
 			{ "transform": "typescript-transform-paths", "afterDeclarations": true }
 		]
+	},
+	"ts-node": {
+		"esm": true,
+		"experimentalSpecifierResolution": "node"
 	},
 	"include": ["app/**/*"],
 	"exclude": ["node_modules/*", "dist/*", "scripts/*"]

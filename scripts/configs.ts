@@ -1,20 +1,20 @@
 /**
  * Check configs.js
  * =====================
- * Check if configs/config.js exist, if don't exist rename .tpl
+ * Check if configs/config.ts exist, if don't exist rename .tpl
  *
  * @contributors: Patryk Rzucidło [@ptkdev] <support@ptkdev.io> (https://ptk.dev)
  *
  * @license: MIT License
  *
  */
-import * as fs from "fs";
-import * as shell from "shelljs";
+import fs from "fs";
+import shell from "shelljs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-declare const __dirname: string;
-
-const path = `${__dirname}/../app/configs/config.js`;
-
-if (!fs.existsSync(path)) {
-	shell.cp("-Rf", `${__dirname}/../app/configs/config.js.tpl`, `${path}`);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const config_path = `${__dirname}/../app/configs/config.ts`;
+if (!fs.existsSync(config_path)) {
+	shell.cp("-Rf", `${__dirname}/../app/configs/config.ts.tpl`, `${config_path}`);
 }
