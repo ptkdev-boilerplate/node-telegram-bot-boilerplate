@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	// Server
 	"server": {
 		"port": 5000,
@@ -9,7 +9,7 @@ module.exports = {
 		token: "BOT_TOKEN",
 	},
 
-	mode: "poll", // or webhook
+	mode: "poll", // poll | webhook | localtunnel
 	webhook: {
 		url: "https://sample.host.com:8443",
 		port: 8443,

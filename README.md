@@ -144,11 +144,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
 <table>
-  <tr>
-    <td align="center"><a href="https://ptk.dev"><img src="https://avatars1.githubusercontent.com/u/442844?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Patryk Rzucidło</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Code">💻</a> <a href="#translation-ptkdev" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Documentation">📖</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=author%3Aptkdev" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://edge33.github.io"><img src="https://avatars1.githubusercontent.com/u/5662280?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Francesco Maida</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Code">💻</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://verhyppo.github.io"><img src="https://avatars.githubusercontent.com/u/3539384?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Veronica Di Giorgio</b></sub></a><br /><a href="#infra-verhyppo" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=verhyppo" title="Documentation">📖</a></td>
-  </tr>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="16.66%"><a href="https://ptk.dev"><img src="https://avatars1.githubusercontent.com/u/442844?v=4?s=100" width="100px;" alt="Patryk Rzucidło"/><br /><sub><b>Patryk Rzucidło</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Code">💻</a> <a href="#translation-ptkdev" title="Translation">🌍</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=ptkdev" title="Documentation">📖</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/issues?q=author%3Aptkdev" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://edge33.github.io"><img src="https://avatars1.githubusercontent.com/u/5662280?v=4?s=100" width="100px;" alt="Francesco Maida"/><br /><sub><b>Francesco Maida</b></sub></a><br /><a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Code">💻</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=edge33" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://verhyppo.github.io"><img src="https://avatars.githubusercontent.com/u/3539384?v=4?s=100" width="100px;" alt="Veronica Di Giorgio"/><br /><sub><b>Veronica Di Giorgio</b></sub></a><br /><a href="#infra-verhyppo" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/ptkdev/ptkdev-boilerplate/node-telegram-bot-boilerplate/commits?author=verhyppo" title="Documentation">📖</a></td>
+    </tr>
+  </tbody>
 </table>
 
 <!-- markdownlint-restore -->
